@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
@@ -16,56 +17,48 @@ import EditPost from "./pages/EditPost.jsx";
 import Post from "./pages/Post.jsx" ;
 
 const router = createBrowserRouter([
-  {
-    path: "/",
+  {path: "/",
     element: <App />,
     children: [
-      {
-        path: "/",
+      {path: "/",
         element: <Home />,
       },
-      {
-        path:"/login",
+      {path:"/login",
         element :(
           <Protected authentication = {false}>
             <Login/>
           </Protected>
         )
       },
-      {
-        path:"/signup",
+      {path:"/signup",
         element :(
           <Protected authentication = {false}>
             <Signup/>
           </Protected>
         )
       },
-      {
-        path:"/add-post",
+      {path:"/add-post",
         element :(
           <Protected authentication>
             <AddPost/>
           </Protected>
         )
       },
-      {
-        path:"/all-posts",
+      {path:"/all-posts",
         element :(
           <Protected authentication>
             <AllPosts/>
           </Protected>
         )
       },
-      {
-        path:"/edit-post/:slug",
+      {path:"/edit-post/:slug",
         element :(
           <Protected authentication>
             <EditPost/>
           </Protected>
         )
       },
-      {
-        path:"/post/:slug",
+      {path:"/post/:slug",
         element :(
           <Protected authentication>
             <Post/>
