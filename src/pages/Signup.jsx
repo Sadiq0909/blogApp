@@ -1,6 +1,10 @@
+import { Signup as SignupComponents } from "../components"
+
 function Signup(){
        return (
-              <div>Signup</div>
+              <div className="py-8">
+                     <SignupComponents />
+              </div>
        )
 }
 
